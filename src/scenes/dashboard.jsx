@@ -1,9 +1,10 @@
 import { Box } from "@mui/material";
 import Header from "../Components/Header";
 import React from "react";
+import { toast } from "react-toastify";
 
 
-const Dashboard = ({ user }) => {
+const Dashboard = () => {
 
   return (
     <Box m="20px">

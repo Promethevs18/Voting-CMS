@@ -2,26 +2,28 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 import { getAuth } from "firebase/auth";
+import { getStorage } from "firebase/storage";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDXxSYau7edKYvVmgNTg3feZRT0PBG74mQ",
-  authDomain: "vet-clinic-app-8203d.firebaseapp.com",
-  databaseURL: "https://vet-clinic-app-8203d-default-rtdb.firebaseio.com",
-  projectId: "vet-clinic-app-8203d",
-  storageBucket: "vet-clinic-app-8203d.appspot.com",
-  messagingSenderId: "946182137618",
-  appId: "1:946182137618:web:daff4aa3b9f20dda8cb5cb",
-  measurementId: "G-QRYVH0Z92P",
+  apiKey: "AIzaSyBLZJRS3l6OcS-EQJLHzYgcBYNiuAJLan4",
+  authDomain: "pnhs-online-voting.firebaseapp.com",
+  databaseURL: "https://pnhs-online-voting-default-rtdb.firebaseio.com",
+  projectId: "pnhs-online-voting",
+  storageBucket: "pnhs-online-voting.appspot.com",
+  messagingSenderId: "632079493009",
+  appId: "1:632079493009:web:0af187a44ad4c4bc259c30",
+  measurementId: "G-565M261NPS"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const auth = getAuth(app);
+const storage = getStorage(app)
 
-export { db, auth };
+export { db, auth, storage };
 
 //THIS PROJECT WAS MADE BY PROMETHEUS

@@ -8,7 +8,9 @@ import { useState, useEffect } from "react";
 import { auth } from "./firebase";
 import "react-toastify/dist/ReactToastify.css";
 
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, Zoom } from "react-toastify";
+import AddCandidate from "./scenes/AddCandidate";
+import Authentication from "./scenes/Authentication";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -34,12 +36,20 @@ function App() {
           <Sidebar setActive={setActive} active={active} user={user} />
           <main className="content">
             <Topbar />
-            <ToastContainer position="top-center" />
+            <ToastContainer position="top-center" theme="colored" autoClose={3000} transition={Zoom}/>
             <Routes setUser={user}>
               <Route
                 path="/"
-                element={<Dashboard setActive={setActive} user={user} />}
+                element={<Dashboard setActive={setActive} />}
               />
+              <Route
+                path="/addcandidate"
+                element={<AddCandidate setActive={setActive} user={user} />}
+              />
+              <Route
+                path="/authentication"
+                element={<Authentication setActive={setActive}  user={user}/>}/>
+
             </Routes>
           </main>
         </div>
